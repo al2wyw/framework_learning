@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>refresh after 3 seconds</title>
+<script type="text/javascript">
+function testa(){
+	window.location.href="http://www.baidu.com";
+}
+</script>
+</head>
+<body onload="test(3)">
+	<p>
+		It is going to refresh the page within <span id="rtime">3</span>
+		seconds!
+	</p>
+	<input type="button" value="refresh now" onclick="testa()" />
+</body>
+<script type="text/javascript">
+function test(i){
+	document.getElementById("rtime").innerHTML=i;
+	i--;
+	if(i>-1)
+		setTimeout(function (){test(i);},1000);
+}
+
+setTimeout(function(){window.location.href="http://www.baidu.com" ;},4000);
+</script>
+</html>

@@ -125,7 +125,7 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
 
       <Context docBase="doc" path="/doc" reloadable="true" source="org.eclipse.jst.jee.server:doc"/>
-      <Context docBase="http_test" path="/http_test" reloadable="true" source="org.eclipse.jst.jee.server:http_test"/>
+      
       <Context docBase="Form_XML_Validation_Struts2_Ant" path="/Form_XML_Validation_Struts2_Ant" reloadable="true" source="org.eclipse.jst.j2ee.server:Form_XML_Validation_Struts2_Ant"/><Context docBase="uploadFile" path="/uploadFile" reloadable="true" source="org.eclipse.jst.jee.server:uploadFile"/></Host>
     </Engine>
   </Service>

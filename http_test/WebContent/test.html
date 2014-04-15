@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+function get(){
+	var req=new XMLHttpRequest();
+	if(!req){
+		alert("can not request");
+	}
+	req.open("GET","/http_test/test",true);
+	req.setRequestHeader("Cache-Control","max-age=30,max-stale=100");
+	//req.setRequestHeader("Pragma","no-cache");
+	req.onreadystatechange=function (){
+		if(req.readyState==4){
+			var d=new Date();
+			var res=req.getAllResponseHeaders();
+			document.getElementById("result").innerHTML=res+"</br>"+d.toString();
+		}
+	};
+	req.send();
+}
+</script>
+</head>
+<body>
+<p>show the cache control</p>
+<button onclick="get()">request</button>
+<p id="result"></p>
+</body>
+</html>

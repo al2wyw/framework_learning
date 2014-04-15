@@ -126,7 +126,7 @@
 
       <Context docBase="doc" path="/doc" reloadable="true" source="org.eclipse.jst.jee.server:doc"/>
       
-      <Context docBase="Form_XML_Validation_Struts2_Ant" path="/Form_XML_Validation_Struts2_Ant" reloadable="true" source="org.eclipse.jst.j2ee.server:Form_XML_Validation_Struts2_Ant"/><Context docBase="uploadFile" path="/uploadFile" reloadable="true" source="org.eclipse.jst.jee.server:uploadFile"/></Host>
+      <Context docBase="uploadFile" path="/uploadFile" reloadable="true" source="org.eclipse.jst.jee.server:uploadFile"/><Context docBase="Form_validation" path="/Form_validation" reloadable="true" source="org.eclipse.jst.jee.server:Form_validation"/></Host>
     </Engine>
   </Service>
 </Server>

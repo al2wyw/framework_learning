@@ -41,8 +41,8 @@ public class hello extends HttpServlet {
 		ac.refresh();
 		Hellomessage test=ac.getBean("hello",Hellomessage.class);
 		request.setAttribute("hello",test.getMessage());
+//		response.getWriter().println(test.getMessage());
 		request.getRequestDispatcher("hello.jsp").forward(request, response);
-		ac.close();
 	}
 
 	/**

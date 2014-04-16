@@ -14,7 +14,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
  */
 public class hello extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private String path;   
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -28,6 +28,7 @@ public class hello extends HttpServlet {
 	 */
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
+		path=config.getServletContext().getInitParameter("contextConfigLocation");
 	}
 
 	/**
@@ -36,6 +37,8 @@ public class hello extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		GenericXmlApplicationContext ac=new GenericXmlApplicationContext();
+		ac.load(path);
+		ac.refresh();
 		Hellomessage test=ac.getBean("hello",Hellomessage.class);
 		request.setAttribute("hello",test.getMessage());
 		request.getRequestDispatcher("hello.jsp").forward(request, response);

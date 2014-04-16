@@ -9,13 +9,21 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <listener>
-         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-
- <context-param>
-         <param-name>contextConfigLocation</param-name>
-         <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
-    </context-param>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>/WEB-INF/classes/applicationContext.xml</param-value>
+  </context-param>
+  <servlet>
+    <description></description>
+    <display-name>hello</display-name>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>test.servlet.hello</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
 </web-app>

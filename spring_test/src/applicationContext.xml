@@ -3,11 +3,23 @@
         xsi:schemaLocation ="http://www.springframework.org/schema/beans 
         http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
         
-        <bean name="IocAction" class="test.struts2.action.IocAction">
-        	<property name="iti">
-        		<bean class="test.struts2.service.imp.IocTestImpl"></bean>
+        <bean name="peter" class="test.model.person">
+        	<property name="firstName">
+        		<value>Peter</value>
+        	</property>
+        	<property name="lastName">
+        		<value>Smith</value>
+        	</property>
+        	<property name="sex">
+        		<value>Male</value>
+        	</property>
+        	<property name="id">
+        		<value>student123</value>
         	</property>
         </bean>
         
-        <bean name="file" class="vaannila.FileUploadAction"></bean>
+        <bean name="hello" class="test.service.impl.Hellomessage">
+        	<property name="object" ref="peter">
+        	</property>
+        </bean>
 </beans>

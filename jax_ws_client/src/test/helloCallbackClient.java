@@ -1,10 +1,9 @@
 package test;
 
 import javax.xml.ws.AsyncHandler;
-
 import javax.xml.ws.Response;
-
 import myws.*;
+
 public class helloCallbackClient {
 
 

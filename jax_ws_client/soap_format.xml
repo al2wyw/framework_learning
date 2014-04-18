@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- soap1.1 post content -->
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<Add xmlns="http://www.eutesttools.com">
+			<num1>1</num1>
+			<num2>2</num2>
+		</Add>
+	</soap:Body>
+</soap:Envelope>
+<!-- soap1.1 request header : SOAPAction: http://www.eutesttools.com/Add ; Content-Type: text/xml-->
+
+<!-- soap1.2 post content -->
+<soap12:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope">
+	<soap12:Body>
+		<Add xmlns="http://www.eutesttools.com">
+			<num1>1</num1>
+			<num2>2</num2>
+		</Add>
+	</soap12:Body>
+</soap12:Envelope>
+<!-- soap1.2 request header : Content-Type: application/soap+xml  -->

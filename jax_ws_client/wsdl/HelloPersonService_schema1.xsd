@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://myws/" xmlns:tns="http://myws/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="allPeople" type="tns:allPeople"/>
+
+  <xs:element name="allPeopleResponse" type="tns:allPeopleResponse"/>
+
+  <xs:element name="getPerson" type="tns:getPerson"/>
+
+  <xs:element name="getPersonResponse" type="tns:getPersonResponse"/>
+
+  <xs:complexType name="getPerson">
+    <xs:sequence>
+      <xs:element name="arg0" type="tns:person" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="person">
+    <xs:sequence>
+      <xs:element name="id" type="xs:string" minOccurs="0"/>
+      <xs:element name="name" type="xs:string" minOccurs="0"/>
+      <xs:element name="salary" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPersonResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:person" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="allPeople">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="allPeopleResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:person" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+

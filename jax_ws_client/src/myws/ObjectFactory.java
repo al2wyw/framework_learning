@@ -24,8 +24,10 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _NameResponse_QNAME = new QName("http://myws/", "nameResponse");
-    private final static QName _Name_QNAME = new QName("http://myws/", "name");
+    private final static QName _GetPerson_QNAME = new QName("http://myws/", "getPerson");
+    private final static QName _GetPersonResponse_QNAME = new QName("http://myws/", "getPersonResponse");
+    private final static QName _AllPeople_QNAME = new QName("http://myws/", "allPeople");
+    private final static QName _AllPeopleResponse_QNAME = new QName("http://myws/", "allPeopleResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: myws
@@ -35,37 +37,79 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link NameResponse }
+     * Create an instance of {@link AllPeopleResponse }
      * 
      */
-    public NameResponse createNameResponse() {
-        return new NameResponse();
+    public AllPeopleResponse createAllPeopleResponse() {
+        return new AllPeopleResponse();
     }
 
     /**
-     * Create an instance of {@link Name }
+     * Create an instance of {@link AllPeople }
      * 
      */
-    public Name createName() {
-        return new Name();
+    public AllPeople createAllPeople() {
+        return new AllPeople();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link NameResponse }{@code >}}
+     * Create an instance of {@link GetPersonResponse }
      * 
      */
-    @XmlElementDecl(namespace = "http://myws/", name = "nameResponse")
-    public JAXBElement<NameResponse> createNameResponse(NameResponse value) {
-        return new JAXBElement<NameResponse>(_NameResponse_QNAME, NameResponse.class, null, value);
+    public GetPersonResponse createGetPersonResponse() {
+        return new GetPersonResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Name }{@code >}}
+     * Create an instance of {@link GetPerson }
      * 
      */
-    @XmlElementDecl(namespace = "http://myws/", name = "name")
-    public JAXBElement<Name> createName(Name value) {
-        return new JAXBElement<Name>(_Name_QNAME, Name.class, null, value);
+    public GetPerson createGetPerson() {
+        return new GetPerson();
+    }
+
+    /**
+     * Create an instance of {@link Person }
+     * 
+     */
+    public Person createPerson() {
+        return new Person();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetPerson }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://myws/", name = "getPerson")
+    public JAXBElement<GetPerson> createGetPerson(GetPerson value) {
+        return new JAXBElement<GetPerson>(_GetPerson_QNAME, GetPerson.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetPersonResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://myws/", name = "getPersonResponse")
+    public JAXBElement<GetPersonResponse> createGetPersonResponse(GetPersonResponse value) {
+        return new JAXBElement<GetPersonResponse>(_GetPersonResponse_QNAME, GetPersonResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AllPeople }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://myws/", name = "allPeople")
+    public JAXBElement<AllPeople> createAllPeople(AllPeople value) {
+        return new JAXBElement<AllPeople>(_AllPeople_QNAME, AllPeople.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link AllPeopleResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://myws/", name = "allPeopleResponse")
+    public JAXBElement<AllPeopleResponse> createAllPeopleResponse(AllPeopleResponse value) {
+        return new JAXBElement<AllPeopleResponse>(_AllPeopleResponse_QNAME, AllPeopleResponse.class, null, value);
     }
 
 }

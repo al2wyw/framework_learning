@@ -7,5 +7,9 @@
     <endpoint name='Hello' implementation='myws.hello'
 
         url-pattern='/HelloService' />
+        
+    <endpoint name='HelloPerson' implementation='myws.helloPerson'
+
+        url-pattern='/HelloPersonService' />
 
 </endpoints>

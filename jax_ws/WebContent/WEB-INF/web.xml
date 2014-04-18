@@ -27,4 +27,14 @@
         <url-pattern>/HelloService</url-pattern>
 </servlet-mapping>
 
+<servlet>
+        <servlet-name>Helloperson</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+  </servlet>
+
+<servlet-mapping>
+        <servlet-name>Helloperson</servlet-name>
+        <url-pattern>/HelloPersonService</url-pattern>
+</servlet-mapping>
 </web-app>

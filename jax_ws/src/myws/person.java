@@ -37,5 +37,20 @@ public class person implements Serializable{
 	public person() {
 		
 	}
+	@Override
+	public int hashCode() {
+		return name.hashCode()+id.hashCode();
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof person){
+			person p=(person)obj;
+			return name.equals(p.getName())&&
+					id.equals(p.getId())&&
+					salary == p.getSalary();
+		}
+		System.out.println("test");
+		return false;
+	}
 	
 }

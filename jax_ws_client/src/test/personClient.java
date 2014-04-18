@@ -14,10 +14,10 @@ public class personClient {
 			System.out.println(r.getName()+" "+ r.getId()+ " "+r.getSalary());
 		}
 		Person per=new Person();
-		per.setName("perter");
+		per.setName("peter");
 		per.setId("abc123");
 		per.setSalary(23.43d);
-		Person p=port.getPerson(per);//forget to write compare for person class
+		Person p=port.getPerson(per);
 		if(p!=null)
 			System.out.println("good");
 	}

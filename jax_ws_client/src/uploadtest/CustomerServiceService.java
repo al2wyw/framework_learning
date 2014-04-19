@@ -1,14 +1,22 @@
 
 package uploadtest;
 
+import java.io.FileReader;
 import java.net.MalformedURLException;
 import java.net.URL;
+
 import javax.xml.namespace.QName;
+import javax.xml.stream.XMLEventReader;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.events.Attribute;
+import javax.xml.stream.events.XMLEvent;
 import javax.xml.ws.Service;
 import javax.xml.ws.WebEndpoint;
 import javax.xml.ws.WebServiceClient;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.WebServiceFeature;
+
+import myws.HelloPersonService;
 
 
 /**
@@ -29,8 +37,29 @@ public class CustomerServiceService
     static {
         URL url = null;
         WebServiceException e = null;
+        String s = null;
         try {
-            url = new URL("http://localhost:8080/jax_ws/CustomerService?wsdl");
+        	try{
+	        	XMLInputFactory factory = XMLInputFactory.newInstance();
+	    		FileReader fileReader = new FileReader(HelloPersonService.class.getResource("HelloPersonService.wsdl").getFile()); 
+	    		XMLEventReader reader = factory.createXMLEventReader(fileReader);
+	    		while(reader.hasNext()){
+	    			XMLEvent event = reader.nextEvent();
+	    			if(event.isStartElement()){
+	    				
+	    				QName q=new QName("location");
+	    				Attribute att=event.asStartElement().getAttributeByName(q);
+	    				if(att!=null){
+	    				s=att.getValue();
+	    				System.out.println("xml from: "+s);
+	    				
+	    				}
+	    			}
+	    		}
+        	}catch(Exception exx){
+        		exx.printStackTrace();
+    	}
+            url = new URL(s);
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

@@ -3,9 +3,10 @@ package uploadtest;
 import java.io.FileOutputStream;
 import java.io.ByteArrayInputStream;
 import java.io.OutputStream;
-
+import java.io.ObjectOutputStream;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
+import java.io.File;
 
 @WebService
 public class CustomerService {
@@ -24,11 +25,12 @@ public class CustomerService {
 
                  System.out.println("generate jpg......");
                  
-                 String path = this.getClass().getResource("/").getFile();
-                 System.out.println(path);
+                 File f = new File(this.getClass().getResource("/").getFile());
+                 f=f.getParentFile().getParentFile();
+                 String path =f.getAbsolutePath();
                  is = new ByteArrayInputStream(customer.getFile());
 
-                 os = new FileOutputStream(path+"customer.jpg");
+                 os = new FileOutputStream(path+"/customer.jpg");
 
                  byte[] bytes = new byte[1024];
 
@@ -39,7 +41,12 @@ public class CustomerService {
                           os.write(bytes, 0, c);
 
                  }
-
+                 
+                 ObjectOutputStream fout=new ObjectOutputStream(new FileOutputStream(path+"/people"));
+                 fout.writeLong(customer.getId());
+                 fout.writeObject(customer.getName());
+                 fout.writeObject("customer.jpg");
+                 fout.close();
         } catch (Exception e) {
 
                  e.printStackTrace();

@@ -11,5 +11,9 @@
     <endpoint name='HelloPerson' implementation='myws.helloPerson'
 
         url-pattern='/HelloPersonService' />
+        
+        <endpoint name='CustomerService' implementation='uploadtest.CustomerService'
+
+        url-pattern='/CustomerService' />
 
 </endpoints>

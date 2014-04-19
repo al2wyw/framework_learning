@@ -9,32 +9,44 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
-
   <listener>
-        <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
+    <listener-class>com.sun.xml.ws.transport.http.servlet.WSServletContextListener</listener-class>
   </listener>
-
-   
   <servlet>
-        <servlet-name>Hello</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+    <servlet-name>Hello</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
   </servlet>
-
-<servlet-mapping>
-        <servlet-name>Hello</servlet-name>
-        <url-pattern>/HelloService</url-pattern>
-</servlet-mapping>
-
-<servlet>
-        <servlet-name>Helloperson</servlet-name>
-        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
+  <servlet-mapping>
+    <servlet-name>Hello</servlet-name>
+    <url-pattern>/HelloService</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Helloperson</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
   </servlet>
-
-<servlet-mapping>
-        <servlet-name>Helloperson</servlet-name>
-        <url-pattern>/HelloPersonService</url-pattern>
-</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Helloperson</servlet-name>
+    <url-pattern>/HelloPersonService</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>customer</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>customer</servlet-name>
+    <url-pattern>/CustomerService</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>show</display-name>
+    <servlet-name>show</servlet-name>
+    <servlet-class>servlet.show</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>show</servlet-name>
+    <url-pattern>/show</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -15,5 +15,9 @@
         <endpoint name='CustomerService' implementation='uploadtest.CustomerService'
 
         url-pattern='/CustomerService' />
+        
+        <endpoint name='MTOMCustomer' implementation='MTOMUpload.MTOMCustomerImpl'
+
+        url-pattern='/MTOMCustomerService' />
 
 </endpoints>

@@ -40,6 +40,15 @@
     <url-pattern>/CustomerService</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>MTOMcustomer</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MTOMcustomer</servlet-name>
+    <url-pattern>/MTOMCustomerService</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <description></description>
     <display-name>show</display-name>
     <servlet-name>show</servlet-name>

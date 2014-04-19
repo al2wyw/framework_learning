@@ -41,7 +41,7 @@ public class CustomerServiceService
         try {
         	try{
 	        	XMLInputFactory factory = XMLInputFactory.newInstance();
-	    		FileReader fileReader = new FileReader(HelloPersonService.class.getResource("HelloPersonService.wsdl").getFile()); 
+	    		FileReader fileReader = new FileReader(CustomerServiceService.class.getResource("CustomerServiceService.wsdl").getFile()); 
 	    		XMLEventReader reader = factory.createXMLEventReader(fileReader);
 	    		while(reader.hasNext()){
 	    			XMLEvent event = reader.nextEvent();

@@ -6,8 +6,8 @@ import java.io.OutputStream;
 import javax.jws.WebService;
 
 @WebService(serviceName = "MTOMCustomerService", portName =
-              "MTOMCustomerServicePort", targetNamespace ="http://fromjava.ws.ctsjavacoe/",
-endpointInterface = "ctsjavacoe.ws.fromjava.MTOMCustomer")
+              "MTOMCustomerServicePort", targetNamespace ="http://MTOMUpload/",
+endpointInterface = "MTOMUpload.MTOMCustomer")
 
  
 public class MTOMCustomerImpl implements MTOMCustomer {

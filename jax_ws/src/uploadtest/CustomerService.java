@@ -9,7 +9,7 @@ import javax.jws.WebMethod;
 import java.io.File;
 
 @WebService
-public class CustomerService {
+public class CustomerService implements CustomerAction{
 	@WebMethod
 	public void uploadCustomerByName(Customer customer) {
 

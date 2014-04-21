@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import test.service.impl.Hellomessage;
 import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.context.WebApplicationContext;
 /**
  * Servlet implementation class hello
  */
@@ -36,13 +38,16 @@ public class hello extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		GenericXmlApplicationContext ac=new GenericXmlApplicationContext();
-		ac.load(path);
-		ac.refresh();
-		Hellomessage test=ac.getBean("hello",Hellomessage.class);
+//		GenericXmlApplicationContext ac=new GenericXmlApplicationContext();
+//		ac.load(path);
+//		ac.refresh();
+//		Hellomessage test=ac.getBean("hello",Hellomessage.class);
+		
+		WebApplicationContext wc=WebApplicationContextUtils.getWebApplicationContext(request.getServletContext());
+		Hellomessage test=wc.getBean("hello",Hellomessage.class);
 		request.setAttribute("hello",test.getMessage());
-//		response.getWriter().println(test.getMessage());
 		request.getRequestDispatcher("hello.jsp").forward(request, response);
+//		ac.close();
 	}
 
 	/**

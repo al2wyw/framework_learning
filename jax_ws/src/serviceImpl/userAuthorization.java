@@ -4,7 +4,8 @@ import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.jws.HandlerChain;
 
-@WebService(endpointInterface = "service.authorize")
+
+@WebService
 @HandlerChain(file = "handlers.xml")
 public class userAuthorization implements service.authorize{
 

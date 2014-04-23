@@ -44,7 +44,7 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 
 	                   if (request != null) {
 
-	                            System.out.println("Client IP：" + request.getRemoteAddr());
+	                            System.out.println("Client IP" + request.getRemoteAddr());
 
 	                   } else {
 

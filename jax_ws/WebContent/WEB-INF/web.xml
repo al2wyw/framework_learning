@@ -49,6 +49,15 @@
     <url-pattern>/MTOMCustomerService</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>test</servlet-name>
+    <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>test</servlet-name>
+    <url-pattern>/UserAuthorizationService</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <description></description>
     <display-name>show</display-name>
     <servlet-name>show</servlet-name>

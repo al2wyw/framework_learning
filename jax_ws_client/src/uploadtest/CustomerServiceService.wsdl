@@ -32,7 +32,7 @@
   </binding>
   <service name="CustomerServiceService">
     <port name="CustomerServicePort" binding="tns:CustomerServicePortBinding">
-      <soap:address location="http://192.168.1.104:8080/jax_ws/CustomerService?wsdl"/>
+      <soap:address location="http://10.30.152.147:8080/jax_ws/CustomerService?wsdl"/>
     </port>
   </service>
 </definitions>

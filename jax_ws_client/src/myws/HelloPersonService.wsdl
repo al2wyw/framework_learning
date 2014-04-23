@@ -51,7 +51,7 @@
   </binding>
   <service name="helloPersonService">
     <port name="helloPersonPort" binding="tns:helloPersonPortBinding">
-      <soap:address location="http://localhost:8080/jax_ws/HelloPersonService?wsdl"/>
+      <soap:address location="http://10.30.152.147:8080/jax_ws/HelloPersonService?wsdl"/>
     </port>
   </service>
 </definitions>

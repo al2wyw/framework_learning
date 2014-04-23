@@ -19,5 +19,9 @@
         <endpoint name='MTOMCustomer' implementation='MTOMUpload.MTOMCustomerImpl'
 
         url-pattern='/MTOMCustomerService' />
+        
+        <endpoint name='UserAuthorization' implementation='serviceImpl.userAuthorization'
+
+        url-pattern='/UserAuthorizationService' />
 
 </endpoints>

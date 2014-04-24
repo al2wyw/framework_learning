@@ -65,13 +65,13 @@ public class Authhandler implements SOAPHandler<SOAPMessageContext> {
 
                                                         "UserAuthorizationService");
 
-                                     SOAPHeaderElement helem_user = hdr.addHeaderElement(qname_user);
-
-                                     helem_user.setActor(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
-
-                                     helem_user.addTextNode("admin&admin1");
-
-                                     msg.saveChanges();
+//                                     SOAPHeaderElement helem_user = hdr.addHeaderElement(qname_user);
+//
+//                                     helem_user.setActor(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
+//
+//                                     helem_user.addTextNode("admin&admin");
+//
+//                                     msg.saveChanges();
 
                                      //msg.writeTo(System.out);
 

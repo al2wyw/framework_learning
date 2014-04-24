@@ -1,7 +1,7 @@
 package handler;
 
 import java.util.*;
-
+import org.apache.log4j.*;
 import javax.servlet.http.HttpServletRequest;
 
 import javax.xml.namespace.QName;
@@ -16,6 +16,7 @@ import javax.xml.ws.soap.SOAPFaultException;
 
 public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 
+			 private static Logger log = Logger.getLogger("handler.validationHandler");
 	         public Set<QName> getHeaders() {
 
 	                   // TODO Auto-generated method stub
@@ -29,15 +30,15 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 	         }
 
 	         public boolean handleFault(SOAPMessageContext context) {
-
+	        	 		log.error("Had a soap fault");
+	        	 		
 	                   return false;
 
 	         }
 
 	         public boolean handleMessage(SOAPMessageContext context) {
 
-	 
-
+	        	 	log.info("handler is about to work");
 	                   HttpServletRequest request = (HttpServletRequest) context.get(MessageContext.SERVLET_REQUEST);
 
 	                   //
@@ -45,11 +46,12 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 	                   if (request != null) {
 
 	                            System.out.println("Client IP" + request.getRemoteAddr());
+	                            log.info("Client IP" + request.getRemoteAddr());
 
 	                   } else {
 
 	                            System.out.println("get client ip is null>>>>>>>>>");
-
+	                            log.error("get client ip is null>>>>>>>>>");
 	                   }
 
 	 
@@ -71,6 +73,7 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 	                                     SOAPEnvelope soapEnvelope = soapMessage.getSOAPPart()
 
 	                                                        .getEnvelope();
+	                                     
 
 	                                     SOAPHeader soapHeader = soapEnvelope.getHeader();
 
@@ -164,7 +167,7 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 
 	                            SOAPFault soapFault = soapBody.getFault();
 
-	 
+	                            
 
 	                            if (soapFault == null) {
 
@@ -172,11 +175,11 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 
 	                            }
 
-	 
+	                            
 
 	                            soapFault.setFaultString(reasion);
 
-	 
+	                           
 
 	                            throw new SOAPFaultException(soapFault);
 

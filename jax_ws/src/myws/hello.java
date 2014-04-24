@@ -7,6 +7,7 @@ import javax.jws.WebService;
 public class hello {
 	@WebMethod
 	public String name(String n){
-		return "Hello "+n;
+//		return "Hello "+n;
+		return null;
 	}
 }

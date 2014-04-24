@@ -5,7 +5,7 @@ import javax.activation.DataHandler;
 import javax.activation.FileDataSource;
 
 import mtomupload.*;
-
+import javax.xml.ws.soap.MTOMFeature;
 public class MTOMCustomerClient {
 
          public static void main(String[] args) {
@@ -26,7 +26,7 @@ public class MTOMCustomerClient {
 
                             MTOMCustomer customerPort = customerService
 
-                                               .getMTOMCustomerServicePort();
+                                               .getMTOMCustomerServicePort(new MTOMFeature());
 
                             customer.setId(101);
 

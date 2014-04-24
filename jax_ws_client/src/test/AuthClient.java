@@ -12,11 +12,11 @@ public class AuthClient {
          public static void main(String[] args) {
         	 
         	 String endPoint =
-
-        			 "http://localhost:8080/jax_ws/UserAuthorizationService?wsdl";
+        			
+        			 "http://10.30.152.147:8080/jax_ws/UserAuthorizationService?wsdl";
         	 try{
         	 URL u=new URL(endPoint);
-        	 UserAuthorizationService service = new UserAuthorizationService();
+        	 UserAuthorizationService service = new UserAuthorizationService(u);
 
                    service.setHandlerResolver(new HandlerResolver() {
 

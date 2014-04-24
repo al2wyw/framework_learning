@@ -13,7 +13,7 @@ public class userAuthorization implements service.authorize{
 	@WebMethod
 	public String sayHello(String name) {
 		// TODO Auto-generated method stub
-		return null;
+		return "Hello"+name;
 	}
 
 }

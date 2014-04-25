@@ -30,8 +30,8 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 	         }
 
 	         public boolean handleFault(SOAPMessageContext context) {
-	        	 		log.error("Had a soap fault");
-	        	 		
+	        	 		log.error("Had a soap fault error");
+	        	 		log.info("Had a soap fault info");
 	                   return false;
 
 	         }
@@ -171,12 +171,13 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 
 	                            if (soapFault == null) {
 
+
 	                                     soapFault = soapBody.addFault();
 
 	                            }
 
-	                            
-
+	                            QName client = new QName(SOAPConstants.URI_NS_SOAP_1_1_ENVELOPE,"Client");
+	                            soapFault.setFaultCode(client);
 	                            soapFault.setFaultString(reasion);
 
 	                           

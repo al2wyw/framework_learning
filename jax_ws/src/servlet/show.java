@@ -40,6 +40,7 @@ public class show extends HttpServlet {
 		c.setName((String)oin.readObject());
 		c.setPath((String)oin.readObject());
 		request.setAttribute("customer", c);
+		
 		request.getRequestDispatcher("show.jsp").forward(request, response);
 		}catch(Exception e){
 			e.printStackTrace();

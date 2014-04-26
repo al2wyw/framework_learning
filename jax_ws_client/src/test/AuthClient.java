@@ -13,7 +13,7 @@ public class AuthClient {
         	 
         	 String endPoint =
         			
-        			 "http://192.168.1.100:8080/jax_ws/UserAuthorizationService?wsdl";
+        			 "http://192.168.100.104:8080/jax_ws/UserAuthorizationService?wsdl";
         	 try{
         	 URL u=new URL(endPoint);
         	 UserAuthorizationService service = new UserAuthorizationService(u);

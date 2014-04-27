@@ -16,7 +16,7 @@ public class MTOMCustomerClient {
 
                    String endPoint =
 
- "http://10.30.152.147:8080/jax_ws/MTOMCustomerService?wsdl";
+ "http://192.168.100.104:8080/jax_ws/MTOMCustomerService?wsdl";
 
                    try {
 

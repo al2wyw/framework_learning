@@ -25,4 +25,14 @@
     <servlet-name>hello</servlet-name>
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>helloAgain</display-name>
+    <servlet-name>helloAgain</servlet-name>
+    <servlet-class>test.servlet.helloAgain</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>helloAgain</servlet-name>
+    <url-pattern>/helloAgain</url-pattern>
+  </servlet-mapping>
 </web-app>

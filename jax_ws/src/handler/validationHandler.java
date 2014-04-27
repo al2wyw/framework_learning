@@ -156,7 +156,6 @@ public class validationHandler implements SOAPHandler<SOAPMessageContext> {
 	                   return false;
 
 	         }
-
 	 
 
 	         private void generateSoapFault(SOAPMessage soapMessage, String reasion) {

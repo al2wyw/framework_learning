@@ -4,7 +4,12 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import javax.jws.WebService;
-
+import javax.xml.ws.WebServiceContext;
+import javax.annotation.Resource;
+import org.apache.log4j.*;
+import javax.servlet.http.HttpServletRequest;
+import handler.validationHandler;
+import javax.xml.ws.handler.*;
 @WebService(serviceName = "MTOMCustomerService", portName =
               "MTOMCustomerServicePort", targetNamespace ="http://MTOMUpload/",
 endpointInterface = "MTOMUpload.MTOMCustomer")
@@ -12,8 +17,10 @@ endpointInterface = "MTOMUpload.MTOMCustomer")
  
 public class MTOMCustomerImpl implements MTOMCustomer {
 
-         @Override
+		 @Resource
+		 private WebServiceContext ctx;
 
+         private static Logger log=Logger.getLogger(validationHandler.class);
          public void uploadCustomerByName(Customer customer) {
 
                    InputStream is = null;
@@ -21,12 +28,20 @@ public class MTOMCustomerImpl implements MTOMCustomer {
                    OutputStream os = null;
 
                    try {
+                	   		if(ctx!=null){
+                	   			MessageContext mctx=ctx.getMessageContext();
+                	   			HttpServletRequest request = (HttpServletRequest) mctx.get(MessageContext.SERVLET_REQUEST);
+                	   			String s=request.getRemoteAddr();
+                	   			log.info("the request from "+s+" is being processed");
+                	   		}else{
+                	   			log.error("WebServiceContext is null, can not get request infomation");
+                	   		}
 
-                            System.out.println("customer====" + customer.getId() + "  "
+                            log.info("customer====" + customer.getId() + "  "
 
                                                + customer.getName());
 
-                            System.out.println("generate jpg......");
+                            log.info("generate jpg......");
 
                             is = customer.getMyPhoto().getInputStream();
 

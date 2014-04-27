@@ -60,28 +60,28 @@ public class Authhandler implements SOAPHandler<SOAPMessageContext> {
                                                hdr = env.addHeader();
 
 
-//                                     QName qname_user = new QName("http://serviceImpl/",
-//
-//                                                        "UserAuthorizationService");
-//                                     
-//
-//                                     SOAPHeaderElement helem_user = hdr.addHeaderElement(qname_user);
-//
-//                                     helem_user.setActor(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
-//
-//                                     helem_user.addTextNode("admin&admin");
+                                     QName qname_user = new QName("http://serviceImpl/",
+
+                                                        "UserAuthorizationService");
                                      
-//                                     QName qname_extra = new QName("http://serviceImpl/",
-//
-//                                             "ExtraService");
-//                                     
-//                                     SOAPHeaderElement helem_extra = hdr.addHeaderElement(qname_extra);
-//                                     
-//                                     helem_extra.setActor(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
-//                                     
-//                                     helem_extra.setMustUnderstand(true);
-//
-//                                     helem_extra.addTextNode("test");
+
+                                     SOAPHeaderElement helem_user = hdr.addHeaderElement(qname_user);
+
+                                     helem_user.setActor(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
+
+                                     helem_user.addTextNode("admin&admin");
+                                     
+                                     QName qname_extra = new QName("http://serviceImpl/",
+
+                                             "ExtraService");
+                                     
+                                     SOAPHeaderElement helem_extra = hdr.addHeaderElement(qname_extra);
+                                     
+                                     helem_extra.setActor(SOAPConstants.URI_SOAP_1_2_ROLE_NEXT);
+                                     
+                                     helem_extra.setMustUnderstand(true);
+
+                                     helem_extra.addTextNode("test");
 
                                      msg.saveChanges();
 

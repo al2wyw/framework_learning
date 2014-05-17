@@ -21,6 +21,7 @@ public class testLocale {
 		System.out.println(System.getProperty("user.dir"));
 		Locale myLoc=Locale.getDefault();
 		Locale china=Locale.CHINA;
+		//FileUploadAction.properties is located at src/ or classes/
 		ResourceBundle myrb=ResourceBundle.getBundle("FileUploadAction");
 		System.out.println(myrb.getString("submit"));
 	}

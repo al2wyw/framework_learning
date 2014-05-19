@@ -19,6 +19,15 @@ public class test_float {
 		BigDecimal y=new BigDecimal("0.01");
 		BigDecimal z=x.add(y);
 		System.out.println(z.toString());
+		
+		System.out.println("=================");
+		
+		int i = 10;
+		long l = 10L;
+		float f = 12.43f;
+		float o = i+ f;
+		o = l + f;
+		System.out.println(o);
 	}
 
 }

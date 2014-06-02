@@ -1,6 +1,14 @@
 package mytest;
 import java.math.*;
-
+/*
+ * double <- (double + double/float/long/int)
+ *  |
+ * float <- (float + float/long/int)
+ *  |
+ * long <- (long + long/int)
+ *  |
+ * int <- (byte/char/short/int + byte/char/short/int)
+ */
 public class test_float {
 
 	/**
@@ -27,6 +35,8 @@ public class test_float {
 		float f = 12.43f;
 		float o = i+ f;
 		o = l + f;
+		o = f + o;
+		
 		System.out.println(o);
 	}
 

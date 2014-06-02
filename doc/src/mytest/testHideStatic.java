@@ -16,8 +16,12 @@ class A{
 }
 
 class B extends A{
+//	public int d(){ //will be wrong
+//		System.out.println("B");
+//		return 1;
+//	}
 	public static int d(){
-		System.out.println("D");
+		System.out.println("B");
 		return 1;
 	}
 }
@@ -39,55 +43,4 @@ public class testHideStatic {
 
 	}
 
-}
-
-class simpleSerializableTest {
-    public static void main(String[] args) throws Exception {
-    	
-        ObjectOutputStream out=new ObjectOutputStream(new FileOutputStream("objectFile.obj"));
-         
-        String strObj="name";
-        Customer customer=new Customer("rollen");
-        //序列化,此处故意将同一对象序列化2次
-        out.writeObject(strObj);
-        out.writeObject(customer);
-        customer.setName("roll");
-        out.writeObject(customer);
-        out.close();
-        //反序列化
-        ObjectInputStream in=new ObjectInputStream(new FileInputStream("objectFile.obj"));
-        String strobj1=(String)in.readObject();
-        Customer cus1=(Customer)in.readObject();
-        Customer cus2=(Customer)in.readObject();
-        in.close();
-        System.out.println(strobj1+": "+cus1);
-        System.out.println(strObj==strobj1);
-        System.out.println(cus1==customer);
-        System.out.println(cus1==cus2);
-        System.out.println(cus1);
-        System.out.println(cus2);
-    }
-}
- 
-class Customer implements Serializable {
-    private static final long serialVersionUID = 1L;
-    private String name;
- 
-    public Customer() {
-        System.out.println("无参构造方法");
-    }
- 
-    public Customer(String name) {
-        System.out.println("有参构造方法");
-        this.name = name;
-    }
-    
-    public final void setName(String s){
-    	name = s;
-    }
-    
-    public String toString() {
-        return "[ "+name+" ]";
-    }
-     
 }
